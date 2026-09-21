@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abinaya M | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #7047a8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #7047a8;
+        }
+
+        /* Home */
+        #home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ffffff, #f5effc);
+        }
+
+        .home-content h1 {
+            font-size: 55px;
+            color: #7047a8;
+            margin-bottom: 10px;
+        }
+
+        .home-content h2 {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .home-content p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 11px 22px;
+            margin: 5px;
+            border-radius: 25px;
+            background: #7047a8;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #573184;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #7047a8;
+            border: 1px solid #7047a8;
+        }
+
+        /* Common Section */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #7047a8;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            background: #f3eafb;
+            color: #7047a8;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Education */
+        .education-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: #faf7fd;
+            border-left: 4px solid #7047a8;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .education-card h3 {
+            color: #7047a8;
+            margin-bottom: 5px;
+        }
+
+        .education-card p {
+            color: #555;
+        }
+
+        /* Projects */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 25px;
+            background: #ffffff;
+            border: 1px solid #eadff5;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(112,71,168,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #7047a8;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+        }
+
+        /* Internship */
+        .internship {
+            max-width: 850px;
+            margin: auto;
+            background: #faf7fd;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eadff5;
+        }
+
+        .internship h3 {
+            color: #7047a8;
+        }
+
+        .internship ul {
+            margin-left: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Certifications */
+        .certifications {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .certifications div {
+            background: #faf7fd;
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #7047a8;
+        }
+
+        /* Activities */
+        .activities {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .activities li {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        /* Contact */
+        #contact {
+            background: #f5effc;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #7047a8;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #7047a8;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .home-content h1 {
+                font-size: 40px;
+            }
+
+            .home-content h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Abinaya M</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Home -->
+    <section id="home">
+        <div class="home-content">
+
+            <h1>Abinaya M</h1>
+
+            <h2>Computer Science and Engineering Student</h2>
+
+            <p>
+                Passionate about web development, programming and learning
+                new technologies. Interested in creating simple and
+                user-friendly web applications.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View Projects</a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am Abinaya M, a Computer Science and Engineering student
+                at Kamaraj College of Engineering and Technology.
+                I have a strong interest in web development and programming.
+                I enjoy learning new technologies and developing
+                practical software solutions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">SQL</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Teamwork</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>B.E. Computer Science and Engineering</h3>
+
+                <p>
+                    Kamaraj College of Engineering and Technology,
+                    Virudhunagar
+                </p>
+
+                <p>
+                    <strong>2024 - 2028</strong> |
+                    CGPA: <strong>7.92</strong>
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Higher Secondary Certificate - Class XII</h3>
+
+                <p>
+                    Government Girls Higher Secondary School
+                </p>
+
+                <p>
+                    2024 | Aggregate: <strong>82%</strong>
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Higher Secondary Certificate - Class X</h3>
+
+                <p>
+                    Government Girls Higher Secondary School
+                </p>
+
+                <p>
+                    2022 | Aggregate: <strong>79%</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Internship -->
+    <section>
+
+        <h2 class="section-title">Internship</h2>
+
+        <div class="internship">
+
+            <h3>Web Development Intern - 15 Days</h3>
+
+            <p>
+                <strong>Bevywise Networks, Tirunelveli, Tamil Nadu</strong>
+            </p>
+
+            <ul>
+                <li>
+                    Gained hands-on experience in web development concepts,
+                    responsive web design and front-end technologies.
+                </li>
+
+                <li>
+                    Developed practical understanding of HTML, CSS,
+                    JavaScript and user-friendly web interfaces.
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <h3>Blockchain-Based Secure Document Verification System</h3>
+
+                <p>
+                    Generated unique hash values for digital documents
+                    to ensure data integrity.
+                </p>
+
+                <p>
+                    Stored document hashes on blockchain for secure and
+                    transparent verification.
+                </p>
+
+                <p>
+                    Verified document authenticity by comparing generated
+                    hashes with blockchain-stored hashes.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Smart Classroom and Timetable Scheduler App</h3>
+
+                <p>
+                    Designed and developed an automated scheduling
+                    application to optimize resource and classroom
+                    allocation.
+                </p>
+
+                <p>
+                    Used algorithmic logic to minimize scheduling conflicts
+                    and improve operational efficiency.
+                </p>
+
+                <p>
+                    Applied structured problem-solving principles and
+                    user-centric architecture.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Certifications -->
+    <section>
+
+        <h2 class="section-title">Certifications & Courses</h2>
+
+        <div class="certifications">
+
+            <div>
+                Infosys Springboard - Java Foundation Certified
+            </div>
+
+            <div>
+                Infosys Springboard - Design Thinking Certified
+            </div>
+
+            <div>
+                Cisco Networking Academy - Data Analytics Essentials
+            </div>
+
+            <div>
+                Cisco Networking Academy - Cybersecurity Essentials
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Academic Activities -->
+    <section>
+
+        <h2 class="section-title">Academic Activities</h2>
+
+        <div class="activities">
+
+            <ul>
+                <li>
+                    Participated in paper presentation at
+                    KPR Institute of Engineering and Technology.
+                </li>
+
+                <li>
+                    Participated in paper presentation at
+                    RAMCO Institute of Technology.
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-info">
+
+            <p>
+                📞 8489223440
+            </p>
+
+            <p>
+                ✉️
+                <a href="mailto:abinaya040107@gmail.com">
+                    abinaya040107@gmail.com
+                </a>
+            </p>
+
+            <p>
+                💻
+                <a href="https://github.com/Abinaya4107" target="_blank">
+                    GitHub
+                </a>
+            </p>
+
+            <p>
+                🔗
+                <a href="https://www.linkedin.com/in/abinaya-muthusamy-14b6653a3/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © <span id="year"></span> Abinaya M. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // Automatically display current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
